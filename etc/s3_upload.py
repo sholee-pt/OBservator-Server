@@ -42,7 +42,6 @@ async def upload_to_s3(file_name, s3_file_name):
             try:
                 await client.head_object(Bucket=bucket_name, Key=s3_file_name)
                 logging.info(f"File {s3_file_name} already exists in S3, skipping upload.")
-                print(f"File {s3_file_name} already exists in S3, skipping upload.")
                 return
             except client.exceptions.ClientError as e:
                 if e.response['Error']['Code'] == "404":
@@ -54,10 +53,8 @@ async def upload_to_s3(file_name, s3_file_name):
                 data = await f.read()
                 await client.put_object(Bucket=bucket_name, Key=s3_file_name, Body=data)
             logging.info(f"Successfully uploaded {file_name} to S3 as {s3_file_name}")
-            print(f"Successfully uploaded {file_name} to S3 as {s3_file_name}")
         except Exception as e:
             logging.error(f"Error occurred while uploading {file_name} to S3: {str(e)}")
-            print(f"Error occurred while uploading {file_name} to S3: {str(e)}")
 
 # 어제 날짜의 데이터를 지정
 def is_yesterday(file_name):
@@ -92,7 +89,6 @@ async def upload_orderbooks_and_ticks():
         await asyncio.gather(*tasks)
     else:
         logging.info("No raw Orderbooks or Ticks files found to upload for yesterday.")
-        print("No raw Orderbooks or Ticks files found to upload for yesterday.")
 
 # CSV 내 Orderbooks와 Ticks 파일들을 S3에 업로드하는 비동기 함수
 async def upload_csv_orderbooks_and_ticks():
@@ -116,7 +112,6 @@ async def upload_csv_orderbooks_and_ticks():
         await asyncio.gather(*tasks)
     else:
         logging.info("No CSV Orderbooks or Ticks files found to upload for yesterday.")
-        print("No CSV Orderbooks or Ticks files found to upload for yesterday.")
 
 # 메인 함수
 async def main():
