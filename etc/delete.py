@@ -27,7 +27,6 @@ def remove_old_files(directory, max_files):
         for file in files[:len(files) - max_files]:
             os.remove(file)  # 파일 삭제
             logging.info(f"Deleted file: {file}")  # 로그 작성
-            print(f"Deleted file: {file}")
 
 # 각 디렉토리에서 오래된 파일을 관리하는 함수
 def manage_files():
