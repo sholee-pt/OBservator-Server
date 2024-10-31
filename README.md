@@ -1,6 +1,8 @@
 # OBservator Server
 Key codes for "OBservator" project on AWS EC2 Instance
 
+[Go Back To Project Repository](https://github.com/CSID-DGU/2024-2-SCS4031-Happy-7)
+
 ## Server Structure (Tree)
 ```
 /home/ubuntu/project
