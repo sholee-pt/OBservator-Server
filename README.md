@@ -1,9 +1,15 @@
 # OBservator Server
-Key codes for "OBservator" project on AWS EC2 Instance
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
-[Go Back To Project Repository](https://github.com/CSID-DGU/2024-2-SCS4031-Happy-7)
+## 관련 링크 (바로가기)
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CSID-DGU/2024-2-SCS4031-Happy-7)
+[![Amazon S3](https://img.shields.io/badge/Amazon%20S3-FF9900?style=for-the-badge&logo=amazons3&logoColor=white)
+](https://observator-bucket.s3.amazonaws.com/index.html)
 
-## Server Structure (Tree)
+## 서버 구조 (트리)
 ```
 /home/ubuntu/project
 ├── codes
@@ -23,7 +29,7 @@ Key codes for "OBservator" project on AWS EC2 Instance
     └── date
 ```
 
-## Crontab (Automation)
+## Crontab (자동화)
 ```
 0 0 * * * /usr/bin/python3 /home/ubuntu/project/codes/etc/delete.py >> /home/ubuntu/project/logs/crontab.log 2>&1
 ```
