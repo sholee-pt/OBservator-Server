@@ -23,7 +23,7 @@ def lambda_handler(event, context):
         
         # 파일 목록이 있는지 확인
         if 'Contents' in objects:
-            files = [obj['Key'] for obj in objects['Contents'] if not obj['Key'].endswith('/') and obj['Key'] != 'index.html']
+            files = [obj['Key'] for obj in objects['Contents'] if not obj['Key'].endswith('/') and obj['Key'] != 'index.html' and obj['Key'] != 'index.html' and obj['Key'] != 'aws-programmatic-access-test-object']
             logger.info(f"File list: {files}")
         else:
             logger.info("No files found in the bucket.")
